@@ -48,14 +48,14 @@
 // All possible hailer phrases
 // Remember to modify above index markers if changing contents
 GLOBAL_LIST_INIT(combine_hailer_phrases, list(	// I can't count rn cause covid brain c':
-	/datum/hailer_phrase/subjectisnowhighspeed	// 0
-	/datum/hailer_phrase/malcompverdict			// 1
-	/datum/hailer_phrase/prepareforjudgement	// 2
-	/datum/hailer_phrase/holditrightthere		// 3
-	/datum/hailer_phrase/malcompliant			// 4
-	/datum/hailer_phrase/getdown				// 5
-	/datum/hailer_phrase/finalwarning			// 6
-	/datum/hailer_phrase/dontmove				// 7
+	/datum/hailer_phrase/subjectisnowhighspeed,	// 0
+	/datum/hailer_phrase/malcompverdict,			// 1
+	/datum/hailer_phrase/prepareforjudgement,	// 2
+	/datum/hailer_phrase/holditrightthere,		// 3
+	/datum/hailer_phrase/malcompliant,			// 4
+	/datum/hailer_phrase/getdown,				// 5
+	/datum/hailer_phrase/finalwarning,			// 6
+	/datum/hailer_phrase/dontmove,				// 7
 ))
 
 /obj/item/clothing/mask/gas/sechailer/combine
