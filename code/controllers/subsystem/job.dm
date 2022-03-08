@@ -41,13 +41,12 @@ SUBSYSTEM_DEF(job)
 	 * See [/datum/controller/subsystem/ticker/proc/equip_characters]
 	 */
 	var/list/chain_of_command = list(
-		JOB_CAPTAIN = 1,
-		JOB_HEAD_OF_PERSONNEL = 2,
-		JOB_RESEARCH_DIRECTOR = 3,
-		JOB_CHIEF_ENGINEER = 4,
-		JOB_CHIEF_MEDICAL_OFFICER = 5,
-		JOB_HEAD_OF_SECURITY = 6,
-		JOB_QUARTERMASTER = 7,
+		JOB_MPFRL = 1,
+		JOB_MPF = 2,
+		JOB_ADMIN = 3,
+		JOB_CWUM = 4,
+		JOB_CWU = 5,
+		JOB_CITIZEN = 6,
 	)
 
 	/// If TRUE, some player has been assigned Captaincy or Acting Captaincy at some point during the shift and has been given the spare ID safe code.
