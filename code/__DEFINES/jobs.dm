@@ -26,6 +26,11 @@
  * and it will hurt the entire time
  */
 
+//HL2RP
+#define JOB_CITIZEN "Citizen"
+#define JOB_MPF "Civil Protection Officer"
+#define JOB_CWU "CWU Worker"
+#define JOB_CWUM "CWU-M Doctor"
 //No department
 #define JOB_ASSISTANT "Assistant"
 #define JOB_PRISONER "Prisoner"
@@ -134,6 +139,10 @@
 #define JOB_DISPLAY_ORDER_DETECTIVE 33
 #define JOB_DISPLAY_ORDER_SECURITY_OFFICER 34
 #define JOB_DISPLAY_ORDER_PRISONER 35
+#define JOB_DISPLAY_ORDER_CITIZEN 36
+#define JOB_DISPLAY_ORDER_MPF 37
+#define JOB_DISPLAY_ORDER_CWU 38
+#define JOB_DISPLAY_ORDER_CWUM 39
 
 
 #define DEPARTMENT_UNASSIGNED "No department assigned"
