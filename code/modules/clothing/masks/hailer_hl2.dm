@@ -71,7 +71,7 @@ GLOBAL_LIST_INIT(mpf_hailer_phrases, list(
 	return // Removing the function of breaking the aggression.
 
 /obj/item/clothing/mask/gas/sechailer/mpf/select_phrase()
-    return rand(1, MPF_LIST_SIZE) // We dont seem to be using aggression so instead just return a random number from the list.
+	return rand(1, MPF_LIST_SIZE) // We dont seem to be using aggression so instead just return a random number from the list.
 
 /obj/item/clothing/mask/gas/sechailer/mpf/halt()
 	set category = "Object"
