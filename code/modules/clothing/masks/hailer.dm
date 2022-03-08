@@ -16,30 +16,19 @@
 #define GOOD_COP_PHRASES 6 // final index of good cop phrases
 #define BAD_COP_PHRASES 12 // final index of bad cop phrases
 #define BROKE_PHRASES 13 // starting index of broken phrases
-#define ALL_PHRASES 19 // total phrases
+#define ALL_PHRASES 8 // total phrases
 
 // All possible hailer phrases
 // Remember to modify above index markers if changing contents
 GLOBAL_LIST_INIT(hailer_phrases, list(
-	/datum/hailer_phrase/emag,
-	/datum/hailer_phrase/halt,
-	/datum/hailer_phrase/bobby,
-	/datum/hailer_phrase/compliance,
-	/datum/hailer_phrase/justice,
-	/datum/hailer_phrase/running,
-	/datum/hailer_phrase/dontmove,
-	/datum/hailer_phrase/floor,
-	/datum/hailer_phrase/robocop,
-	/datum/hailer_phrase/god,
-	/datum/hailer_phrase/freeze,
-	/datum/hailer_phrase/imperial,
-	/datum/hailer_phrase/bash,
-	/datum/hailer_phrase/harry,
-	/datum/hailer_phrase/asshole,
-	/datum/hailer_phrase/stfu,
-	/datum/hailer_phrase/shutup,
-	/datum/hailer_phrase/super,
-	/datum/hailer_phrase/dredd
+	/datum/hailer_phrase/subjectisnowhighspeed
+	/datum/hailer_phrase/malcompverdict
+	/datum/hailer_phrase/prepareforjudgement
+	/datum/hailer_phrase/holditrightthere
+	/datum/hailer_phrase/malcompliant
+	/datum/hailer_phrase/getdown
+	/datum/hailer_phrase/finalwarning
+	/datum/hailer_phrase/dontmove
 ))
 
 /obj/item/clothing/mask/gas/sechailer
@@ -57,7 +46,6 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 	visor_flags_cover = MASKCOVERSMOUTH
 	tint = 0
 	has_fov = FALSE
-	var/aggressiveness = AGGR_BAD_COP
 	var/overuse_cooldown = FALSE
 	var/recent_uses = 0
 	var/broken_hailer = FALSE
