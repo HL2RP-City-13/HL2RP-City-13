@@ -74,6 +74,15 @@ GLOBAL_LIST_INIT(combine_hailer_phrases, list(	// I can't count rn cause covid b
 /obj/item/clothing/mask/gas/sechailer/combine/select_phrase()
 	return rand(0, COMBINE_LIST_SIZE) // We dont seem to be using aggression so instead just return a random number from the list.
 
+/obj/item/clothing/mask/gas/sechailer/combine/play_phrase(mob/user, datum/hailer_phrase/phrase)
+	. = FALSE
+	if (!cooldown)
+		usr.audible_message("[usr]'s Combine Vocoder: <font color='red' size='4'><b>[initial(phrase.phrase_text)]</b></font>")
+		playsound(src, "sound/runtime/complionator/[initial(phrase.phrase_sound)].ogg", 100, FALSE, 4)
+		cooldown = TRUE
+		addtimer(CALLBACK(src, /obj/item/clothing/mask/gas/sechailer/combine/proc/reset_cooldown), PHRASE_COOLDOWN)
+		. = TRUE
+
 #undef PHRASE_COOLDOWN
 #undef OVERUSE_COOLDOWN
 #undef COMBINE_LIST_SIZE
