@@ -91,6 +91,13 @@ GLOBAL_LIST_INIT(combine_hailer_phrases, list(	// I can't count rn cause covid b
 	// select phrase to play
     play_phrase(usr, GLOB.combine_hailer_phrases[select_phrase()])
 
+/obj/item/clothing/mask/gas/sechailer/combine/play_phrase(mob/user, datum/hailer_phrase/phrase)
+	. = FALSE
+	if (!cooldown)
+		usr.audible_message("[usr]'s Vocoding Device: <font color='red' size='4'><b>[initial(phrase.phrase_text)]</b></font>")
+		playsound(src, "sound/runtime/complionator/[initial(phrase.phrase_sound)].ogg", 100, FALSE, 4)
+		. = TRUE
+
 #undef PHRASE_COOLDOWN
 #undef OVERUSE_COOLDOWN
 #undef COMBINE_LIST_SIZE
