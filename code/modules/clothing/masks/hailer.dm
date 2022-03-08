@@ -12,10 +12,9 @@
 #define AGGR_BROKEN 4
 
 // Phrase list index markers
-#define EMAG_PHRASE 1 // index of emagged phrase
-#define GOOD_COP_PHRASES 6 // final index of good cop phrases
-#define BAD_COP_PHRASES 12 // final index of bad cop phrases
-#define BROKE_PHRASES 13 // starting index of broken phrases
+#define GOOD_COP_PHRASES 8 // final index of good cop phrases
+#define BAD_COP_PHRASES 8 // final index of bad cop phrases
+#define BROKE_PHRASES 8 // starting index of broken phrases
 #define ALL_PHRASES 8 // total phrases
 
 // All possible hailer phrases
@@ -46,6 +45,7 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 	visor_flags_cover = MASKCOVERSMOUTH
 	tint = 0
 	has_fov = FALSE
+	aggressiveness = AGGR_SHIT_COP
 	var/overuse_cooldown = FALSE
 	var/recent_uses = 0
 	var/broken_hailer = FALSE
@@ -108,10 +108,6 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 
 /obj/item/clothing/mask/gas/sechailer/attack_self()
 	halt()
-/obj/item/clothing/mask/gas/sechailer/emag_act(mob/user)
-	if(safety)
-		safety = FALSE
-		to_chat(user, span_warning("You silently fry [src]'s vocal circuit with the cryptographic sequencer."))
 
 /obj/item/clothing/mask/gas/sechailer/verb/halt()
 	set category = "Object"
@@ -145,9 +141,6 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 
 
 /obj/item/clothing/mask/gas/sechailer/proc/select_phrase()
-	if (!safety)
-		return EMAG_PHRASE
-	else
 		var/upper_limit
 		switch (aggressiveness)
 			if (AGGR_GOOD_COP)
@@ -156,12 +149,12 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 				upper_limit = BAD_COP_PHRASES
 			else
 				upper_limit = ALL_PHRASES
-		return rand(aggressiveness == AGGR_BROKEN ? BROKE_PHRASES : EMAG_PHRASE + 1, upper_limit)
+		return rand(aggressiveness == AGGR_BROKEN ? BROKE_PHRASES + 1, upper_limit)
 
 /obj/item/clothing/mask/gas/sechailer/proc/play_phrase(mob/user, datum/hailer_phrase/phrase)
 	. = FALSE
 	if (!cooldown)
-		usr.audible_message("[usr]'s Compli-o-Nator: <font color='red' size='4'><b>[initial(phrase.phrase_text)]</b></font>")
+		usr.audible_message("[usr]'s Vocoder: <font color='red' size='4'><b>[initial(phrase.phrase_text)]</b></font>")
 		playsound(src, "sound/runtime/complionator/[initial(phrase.phrase_sound)].ogg", 100, FALSE, 4)
 		cooldown = TRUE
 		addtimer(CALLBACK(src, /obj/item/clothing/mask/gas/sechailer/proc/reset_cooldown), PHRASE_COOLDOWN)
@@ -194,7 +187,6 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 #undef AGGR_BAD_COP
 #undef AGGR_SHIT_COP
 #undef AGGR_BROKEN
-#undef EMAG_PHRASE
 #undef GOOD_COP_PHRASES
 #undef BAD_COP_PHRASES
 #undef BROKE_PHRASES
