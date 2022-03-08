@@ -28,6 +28,8 @@
 
 //HL2RP
 #define JOB_CITIZEN "Citizen"
+#define JOB_ADMIN "City Administrator"
+#define JOB_MPFRL "Civil Protection Rank Leader"
 #define JOB_MPF "Civil Protection Officer"
 #define JOB_CWU "CWU Worker"
 #define JOB_CWUM "CWU-M Doctor"
@@ -139,10 +141,12 @@
 #define JOB_DISPLAY_ORDER_DETECTIVE 33
 #define JOB_DISPLAY_ORDER_SECURITY_OFFICER 34
 #define JOB_DISPLAY_ORDER_PRISONER 35
-#define JOB_DISPLAY_ORDER_CITIZEN 36
-#define JOB_DISPLAY_ORDER_MPF 37
-#define JOB_DISPLAY_ORDER_CWU 38
+#define JOB_DISPLAY_ORDER_ADMIN 36
+#define JOB_DISPLAY_ORDER_MPFRL 37
+#define JOB_DISPLAY_ORDER_MPF 38
 #define JOB_DISPLAY_ORDER_CWUM 39
+#define JOB_DISPLAY_ORDER_CWU 40
+#define JOB_DISPLAY_ORDER_CITIZEN 41
 
 
 #define DEPARTMENT_UNASSIGNED "No department assigned"
@@ -167,6 +171,14 @@
 #define DEPARTMENT_ASSISTANT "Assistant"
 #define DEPARTMENT_BITFLAG_CAPTAIN (1<<9)
 #define DEPARTMENT_CAPTAIN "Captain"
+#define DEPARTMENT_BITFLAG_CITIZEN (1<<10)
+#define DEPARTMENT_CITIZEN "Citizens"
+#define DEPARTMENT_BITFLAG_CWU (1<<11)
+#define DEPARTMENT_CWU "Civil Worker's Union"
+#define DEPARTMENT_BITFLAG_MPF (1<<12)
+#define DEPARTMENT_MPF "Metropolice Force"
+#define DEPARTMENT_BITFLAG_ADMIN (1<<13)
+#define DEPARTMENT_ADMIN "City Administration"
 
 /* Job datum job_flags */
 /// Whether the mob is announced on arrival.
