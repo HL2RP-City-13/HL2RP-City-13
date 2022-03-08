@@ -11,7 +11,7 @@
 	phrase_sound = "subjectisnowhighspeed"
 
 /datum/hailer_phrase/prepareforjudgement
-	phrase_text = "Prepare for Judgement!"
+	phrase_text = "Suspect, prepare to receive Civil Judgement!"
 	phrase_sound = "prepareforjudgement"
 
 /datum/hailer_phrase/holditrightthere
@@ -43,7 +43,7 @@
 #define OVERUSE_COOLDOWN 180
 
 // List Size
-#define COMBINE_LIST_SIZE 7
+#define COMBINE_LIST_SIZE 8
 
 // All possible hailer phrases
 // Remember to modify above index markers if changing contents
@@ -59,7 +59,7 @@ GLOBAL_LIST_INIT(combine_hailer_phrases, list(	// I can't count rn cause covid b
 ))
 
 /obj/item/clothing/mask/gas/sechailer/combine
-	name = "combine gas mask"
+	name = "civil protection officer gas mask"
 	desc = "insert funny joke here"
 	actions_types = list(/datum/action/item_action/halt)
 	icon_state = "sechailer"
@@ -72,16 +72,24 @@ GLOBAL_LIST_INIT(combine_hailer_phrases, list(	// I can't count rn cause covid b
 	return // Removing the function of breaking the aggression.
 
 /obj/item/clothing/mask/gas/sechailer/combine/select_phrase()
-	return rand(0, COMBINE_LIST_SIZE) // We dont seem to be using aggression so instead just return a random number from the list.
+    return rand(1, COMBINE_LIST_SIZE) // We dont seem to be using aggression so instead just return a random number from the list.
 
-/obj/item/clothing/mask/gas/sechailer/combine/play_phrase(mob/user, datum/hailer_phrase/phrase)
-	. = FALSE
-	if (!cooldown)
-		usr.audible_message("[usr]'s Combine Vocoder: <font color='red' size='4'><b>[initial(phrase.phrase_text)]</b></font>")
-		playsound(src, "sound/runtime/complionator/[initial(phrase.phrase_sound)].ogg", 100, FALSE, 4)
-		cooldown = TRUE
-		addtimer(CALLBACK(src, /obj/item/clothing/mask/gas/sechailer/proc/reset_cooldown), PHRASE_COOLDOWN)
-		. = TRUE
+/obj/item/clothing/mask/gas/sechailer/combine/halt()
+    set category = "Object"
+    set name = "HALT"
+    set src in usr
+    if(!isliving(usr) || !can_use(usr) || cooldown)
+        return
+
+    // handle recent uses for overuse
+    recent_uses++
+    if(!overuse_cooldown) // check if we can reset recent uses
+        recent_uses = 0
+        overuse_cooldown = TRUE
+        addtimer(CALLBACK(src, /obj/item/clothing/mask/gas/sechailer/proc/reset_overuse_cooldown), OVERUSE_COOLDOWN)
+
+	// select phrase to play
+    play_phrase(usr, GLOB.combine_hailer_phrases[select_phrase()])
 
 #undef PHRASE_COOLDOWN
 #undef OVERUSE_COOLDOWN
