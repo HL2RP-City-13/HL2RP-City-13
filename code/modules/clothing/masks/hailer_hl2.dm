@@ -80,7 +80,7 @@ GLOBAL_LIST_INIT(combine_hailer_phrases, list(	// I can't count rn cause covid b
 		usr.audible_message("[usr]'s Combine Vocoder: <font color='red' size='4'><b>[initial(phrase.phrase_text)]</b></font>")
 		playsound(src, "sound/runtime/complionator/[initial(phrase.phrase_sound)].ogg", 100, FALSE, 4)
 		cooldown = TRUE
-		addtimer(CALLBACK(src, /obj/item/clothing/mask/gas/sechailer/combine/proc/reset_cooldown), PHRASE_COOLDOWN)
+		addtimer(CALLBACK(src, /obj/item/clothing/mask/gas/sechailer/proc/reset_cooldown), PHRASE_COOLDOWN)
 		. = TRUE
 
 #undef PHRASE_COOLDOWN
