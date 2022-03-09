@@ -2963,6 +2963,7 @@
 #include "code\modules\language\mushroom.dm"
 #include "code\modules\language\narsian.dm"
 #include "code\modules\language\nekomimetic.dm"
+#include "code\modules\language\norwegian.dm"
 #include "code\modules\language\piratespeak.dm"
 #include "code\modules\language\polish.dm"
 #include "code\modules\language\portugese.dm"
