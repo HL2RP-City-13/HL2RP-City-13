@@ -2970,6 +2970,7 @@
 #include "code\modules\language\shadowtongue.dm"
 #include "code\modules\language\slime.dm"
 #include "code\modules\language\spanish.dm"
+#include "code\modules\language\swedish.dm"
 #include "code\modules\language\sylvan.dm"
 #include "code\modules\language\terrum.dm"
 #include "code\modules\language\uncommon.dm"
