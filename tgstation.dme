@@ -2956,6 +2956,7 @@
 #include "code\modules\language\french.dm"
 #include "code\modules\language\german.dm"
 #include "code\modules\language\japanese.dm"
+#include "code\modules\language\korean.dm"
 #include "code\modules\language\language.dm"
 #include "code\modules\language\language_holder.dm"
 #include "code\modules\language\language_manuals.dm"
