@@ -2948,6 +2948,7 @@
 #include "code\modules\language\beachbum.dm"
 #include "code\modules\language\buzzwords.dm"
 #include "code\modules\language\calcic.dm"
+#include "code\modules\language\chinese.dm"
 #include "code\modules\language\codespeak.dm"
 #include "code\modules\language\common.dm"
 #include "code\modules\language\draconic.dm"
