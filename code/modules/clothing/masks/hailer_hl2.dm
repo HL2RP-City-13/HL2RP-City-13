@@ -59,10 +59,12 @@ GLOBAL_LIST_INIT(mpf_hailer_phrases, list(
 
 /obj/item/clothing/mask/gas/sechailer/mpf
 	name = "civil protection officer gas mask"
-	desc = "insert funny joke here"
+	desc = "a mask with a vocoder integrated to scare off Citizens."
 	actions_types = list(/datum/action/item_action/halt)
-	icon_state = "sechailer"
-	inhand_icon_state = "sechailer"
+	icon = 'icons/mob/clothing/mpf/mask.dmi'
+	icon_state = "mpfsuit-mask"
+	inhand_icon_state = "mpfsuit-mask"
+	flags_cover = PEPPERPROOF
 
 /obj/item/clothing/mask/gas/sechailer/mpf/screwdriver_act(mob/living/user, obj/item/I)
 	return // Removing the function of adjusting the aggression.

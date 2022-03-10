@@ -1,12 +1,11 @@
 /obj/item/clothing/head/hooded/mpfsuit
-	name = "metropolice hood"
+	name = "metropolice helmet"
 	desc = "Standard issue Metropolice Force gear."
-	icon_state = "mpfsuit-hood"
+	icon_state = "mpfsuit-helm"
 	armor = list(MELEE = 80, BULLET = 50, LASER = 20, ENERGY = 40, BOMB = 20, BIO = 100, FIRE = 100, ACID = 100)
 	strip_delay = 600
 	icon = 'icons/obj/clothing/mpf/suits.dmi'
 	worn_icon = 'icons/mob/clothing/mpf/suits.dmi'
-	flags_inv = HIDEHAIR
 
 /obj/item/clothing/suit/hooded/mpfsuit
 	name = "metropolice suit"
