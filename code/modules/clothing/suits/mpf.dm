@@ -25,7 +25,7 @@
 	allowed = GLOB.security_vest_allowed
 
 /obj/item/clothing/suit/hooded/mpfsuit/ToggleHood()
-    return ..()
+	return ..()
 
 /obj/item/clothing/suit/hooded/mpfsuit/RemoveHood()
-    return ..()
+	return ..()
