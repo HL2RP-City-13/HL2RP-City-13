@@ -2980,6 +2980,7 @@
 #include "code\modules\language\swedish.dm"
 #include "code\modules\language\sylvan.dm"
 #include "code\modules\language\terrum.dm"
+#include "code\modules\language\ukrainian.dm"
 #include "code\modules\language\uncommon.dm"
 #include "code\modules\language\voltaic.dm"
 #include "code\modules\language\xenocommon.dm"
