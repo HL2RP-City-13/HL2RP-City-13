@@ -4,6 +4,8 @@
 	key = "rus"
 	flags = TONGUELESS_SPEECH
 	default_priority = 90
+	space_chance = 100
+	sentence_chance = 30
 	icon = 'icons/misc/earthlanguage.dmi'
 	icon_state = "russian"
 

@@ -4,6 +4,8 @@
 	key = "nor"
 	flags = TONGUELESS_SPEECH
 	default_priority = 90
+	space_chance = 80
+	sentence_chance = 10
 	icon = 'icons/misc/earthlanguage.dmi'
 	icon_state = "norwegian"
 

@@ -4,6 +4,8 @@
 	key = "swe"
 	flags = TONGUELESS_SPEECH
 	default_priority = 90
+	space_chance = 60
+	sentence_chance = 10
 	icon = 'icons/misc/earthlanguage.dmi'
 	icon_state = "swedish"
 

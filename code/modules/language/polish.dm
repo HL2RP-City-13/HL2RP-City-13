@@ -4,6 +4,8 @@
 	key = "pol"
 	flags = TONGUELESS_SPEECH
 	default_priority = 90
+	space_chance = 80
+	sentence_chance = 30
 	icon = 'icons/misc/earthlanguage.dmi'
 	icon_state = "polish"
 
