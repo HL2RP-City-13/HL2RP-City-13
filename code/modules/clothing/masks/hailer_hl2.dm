@@ -64,7 +64,7 @@ GLOBAL_LIST_INIT(mpf_hailer_phrases, list(
 	icon = 'icons/mob/clothing/mpf/mask.dmi'
 	icon_state = "mpfsuit-mask"
 	inhand_icon_state = "mpfsuit-mask"
-	flags_cover = PEPPERPROOF
+	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH | PEPPERPROOF
 
 /obj/item/clothing/mask/gas/sechailer/mpf/screwdriver_act(mob/living/user, obj/item/I)
 	return // Removing the function of adjusting the aggression.
