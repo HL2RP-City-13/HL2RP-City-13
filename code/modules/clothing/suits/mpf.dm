@@ -25,13 +25,7 @@
 	allowed = GLOB.security_vest_allowed
 
 /obj/item/clothing/suit/hooded/mpfsuit/ToggleHood()
-	if (hood_up)
-		return ..()
-	var/mob/living/carbon/user = loc
-	return ..()
+    return ..()
 
 /obj/item/clothing/suit/hooded/mpfsuit/RemoveHood()
-	if (!hood_up)
-		return ..()
-	var/mob/living/carbon/user = loc
-	return ..()
+    return ..()
